@@ -5,6 +5,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/iProductService/pom.xml" />
+        <option value="$PROJECT_DIR$/iPaymentService/pom.xml" />
       </list>
     </option>
   </component>
