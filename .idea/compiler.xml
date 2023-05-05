@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="iProductService" />
         <module name="iPaymentService" />
+        <module name="iServiceRegistry" />
       </profile>
     </annotationProcessing>
   </component>
@@ -16,6 +17,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="iPaymentService" options="-parameters" />
       <module name="iProductService" options="-parameters" />
+      <module name="iServiceRegistry" options="-parameters" />
     </option>
   </component>
 </project>
