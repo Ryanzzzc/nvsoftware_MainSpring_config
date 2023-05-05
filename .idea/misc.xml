@@ -7,6 +7,7 @@
         <option value="$PROJECT_DIR$/iProductService/pom.xml" />
         <option value="$PROJECT_DIR$/iPaymentService/pom.xml" />
         <option value="$PROJECT_DIR$/iServiceRegistry/pom.xml" />
+        <option value="$PROJECT_DIR$/iOrderService/pom.xml" />
       </list>
     </option>
   </component>
