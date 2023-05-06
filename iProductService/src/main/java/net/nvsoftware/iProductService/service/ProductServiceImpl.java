@@ -51,6 +51,6 @@ public class ProductServiceImpl implements ProductService{
 
         productEntity.setProductQuantity(productEntity.getProductQuantity() - quantity);
         productRepository.save(productEntity);
-        log.info("ProductService reduc eQuantity: " + quantity + " for productId " + productId +" done");
+        log.info("ProductService reduceQuantity: " + quantity + " for productId " + productId +" done");
     }
 }
