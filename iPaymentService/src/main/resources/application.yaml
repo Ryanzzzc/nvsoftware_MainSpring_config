@@ -1,0 +1,23 @@
+
+server:
+  port: 8003
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:3306/ipaymentdb
+    username: root
+    password: Since2019#
+    driverClassName: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL57InnoDBDialect
+    hibernate:
+      ddl-auto: update
+  application:
+    name: PAYMENT-SERVICE
+  config:
+    import: configserver:http://localhost:8051
+
+
+
+
