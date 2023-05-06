@@ -26,3 +26,4 @@ eureka:
       defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8050/eureka}
 
 
+

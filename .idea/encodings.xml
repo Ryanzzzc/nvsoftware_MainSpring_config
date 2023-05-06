@@ -7,6 +7,8 @@
     <file url="file://$PROJECT_DIR$/iPaymentService/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iProductService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iProductService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iServiceConfig/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iServiceConfig/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iServiceRegistry/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iServiceRegistry/src/main/resources" charset="UTF-8" />
   </component>

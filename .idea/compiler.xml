@@ -11,6 +11,7 @@
         <module name="iPaymentService" />
         <module name="iOrderService" />
         <module name="iServiceRegistry" />
+        <module name="iServiceConfig" />
       </profile>
     </annotationProcessing>
   </component>
@@ -19,6 +20,7 @@
       <module name="iOrderService" options="-parameters" />
       <module name="iPaymentService" options="-parameters" />
       <module name="iProductService" options="-parameters" />
+      <module name="iServiceConfig" options="-parameters" />
       <module name="iServiceRegistry" options="-parameters" />
     </option>
   </component>
