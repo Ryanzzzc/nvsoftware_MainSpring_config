@@ -35,13 +35,21 @@ public class PaymentServiceImpl implements PaymentService{
     }
 
     @Override
-    public PaymentResponse getPaymentByOrderId(long orderId) {
+    public PaymentResponse getPaymentByOrderId(long orderId ) {
         log.info("OrderService getPaymentByOrderId start");
-        PaymentEntity paymentEntity = paymentRepository.findByOrderId(orderId);
+
+        PaymentEntity paymentEntity = null;
+        try{
+            paymentEntity = paymentRepository.findByOrderId(orderId);
+        }catch(Exception e) {
+            throw  new RuntimeException("getPaymentByOrderId with orderId "+orderId+"NOT FOUND" );
+        }
+
+
 
         PaymentResponse paymentResponse = PaymentResponse.builder()
                 .paymentId(paymentEntity.getPaymentId())
-                .orderId(orderId)
+                .orderId(paymentEntity.getOrderId())
                 .paymentMode(PaymentMode.valueOf(paymentEntity.getPaymentMode()))
                 .paymentDate(paymentEntity.getPaymentDate())
                 .paymentStatus(paymentEntity.getPaymentStatus())

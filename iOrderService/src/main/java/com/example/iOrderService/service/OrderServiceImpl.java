@@ -77,11 +77,18 @@ public class OrderServiceImpl implements OrderService{
         OrderEntity orderEntity = orderRepository.findById(orderId)
                 .orElseThrow(()->new RuntimeException("OrderService getOrderById NOT FOUND for: " + orderId));
 
-        // add productResponse
+        // add productResponse && paymentResponse
         log.info("OrderService RestCall ProductService getByProductId " + orderEntity.getProductId());
         OrderResponse.ProductResponse productResponse = restTemplate.getForObject(
                 "http://PRODUCT-SERVICE/products/"+orderEntity.getProductId(),
                 OrderResponse.ProductResponse.class
+        );
+
+        log.info("OrderService RestCall PaymentService getByOrderId " + orderEntity.getOrderId());
+
+        OrderResponse.PaymentResponse paymentResponse = restTemplate.getForObject(
+                "http://PAYMENT-SERVICE/payments/"+orderEntity.getOrderId(),
+                OrderResponse.PaymentResponse.class
         );
 
         OrderResponse orderResponse = OrderResponse.builder()
@@ -90,12 +97,12 @@ public class OrderServiceImpl implements OrderService{
                 .orderDate(Instant.now())
                 .orderStatus(orderEntity.getOrderStatus())
                 .productResponse(productResponse)
+                .paymentResponse(paymentResponse)
                 .build();
 
-
-
-
         log.info("OrderService getOrderById done");
+
+
         return orderResponse;
 
     }
