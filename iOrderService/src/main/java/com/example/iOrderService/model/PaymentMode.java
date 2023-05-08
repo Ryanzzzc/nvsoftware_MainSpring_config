@@ -1,6 +1,6 @@
 package com.example.iOrderService.model;
 
-public enum PayMentMode {
+public enum PaymentMode {
     CASH,
     BANK_ACCOUNT,
     CREDIT_CARD,

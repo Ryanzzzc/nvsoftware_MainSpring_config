@@ -1,6 +1,5 @@
 package com.example.iOrderService.entity;
 
-import com.example.iOrderService.model.PayMentMode;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

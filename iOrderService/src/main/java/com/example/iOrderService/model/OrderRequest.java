@@ -8,5 +8,5 @@ public class OrderRequest {
     private long productId;
     private long orderQuantity;
     private long totalAmount;
-    private PayMentMode paymentMode;
+    private PaymentMode paymentMode;
 }
