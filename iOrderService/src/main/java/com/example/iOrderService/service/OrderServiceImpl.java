@@ -4,6 +4,7 @@ import com.example.iOrderService.entity.OrderEntity;
 import com.example.iOrderService.external.client.PaymentServiceFeignClient;
 import com.example.iOrderService.external.client.ProductServiceFeignClient;
 import com.example.iOrderService.model.OrderRequest;
+import com.example.iOrderService.model.OrderResponse;
 import com.example.iOrderService.model.PaymentRequest;
 import com.example.iOrderService.repository.OrderRepository;
 import lombok.extern.log4j.Log4j2;
@@ -64,6 +65,23 @@ public class OrderServiceImpl implements OrderService{
         orderRepository.save(orderEntity);
         log.info("PaymentServiceFeignClient doPayment done");
         return orderEntity.getOrderId();
+
+    }
+
+    @Override
+    public OrderResponse getOrderById(long orderId) {
+        log.info("OrderService getOrderById start with orderId: " + orderId);
+        OrderEntity orderEntity = orderRepository.findById(orderId)
+                .orElseThrow(()->new RuntimeException("OrderService getOrderById NOT FOUND for: " + orderId));
+
+        OrderResponse orderResponse = OrderResponse.builder()
+                .orderId(orderEntity.getOrderId())
+                .totalAmount(orderEntity.getTotalAmount())
+                .orderDate(Instant.now())
+                .orderStatus(orderEntity.getOrderStatus())
+                .build();
+        log.info("OrderService getOrderById done");
+        return orderResponse;
 
     }
 }
