@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/iServiceRegistry/pom.xml" />
         <option value="$PROJECT_DIR$/iOrderService/pom.xml" />
         <option value="$PROJECT_DIR$/iServiceConfig/pom.xml" />
+        <option value="$PROJECT_DIR$/iAPIGateway/pom.xml" />
       </list>
     </option>
   </component>

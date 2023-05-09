@@ -12,11 +12,13 @@
         <module name="iOrderService" />
         <module name="iServiceRegistry" />
         <module name="iServiceConfig" />
+        <module name="iAPIGateway" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="iAPIGateway" options="-parameters" />
       <module name="iOrderService" options="-parameters" />
       <module name="iPaymentService" options="-parameters" />
       <module name="iProductService" options="-parameters" />

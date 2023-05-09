@@ -5,6 +5,7 @@ import com.example.iOrderService.external.client.PaymentServiceFeignClient;
 import com.example.iOrderService.external.client.ProductServiceFeignClient;
 import com.example.iOrderService.model.OrderRequest;
 import com.example.iOrderService.model.OrderResponse;
+import com.example.iOrderService.model.PaymentMode;
 import com.example.iOrderService.model.PaymentRequest;
 import com.example.iOrderService.repository.OrderRepository;
 import lombok.extern.log4j.Log4j2;
@@ -35,7 +36,7 @@ public class OrderServiceImpl implements OrderService{
                 .totalAmount(orderRequest.getTotalAmount())
                 .orderDate(Instant.now())
                 .orderStatus("CREATED")
-                .paymentMode(orderRequest.getPaymentMode().toString())
+                .paymentMode(orderRequest.getPaymentMode().name())
                 .build();
         orderEntity = orderRepository.save(orderEntity);
         log.info("OrderService placeOrder save to orderdb done");
